@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+   <package name="default" extends="struts-default">
+		<action name="openRegistro" class="com.core.web.actions.registro.RegistroAction" method="open">
+			<result name="success" type="dispatcher">/focaWeb/registro/registro.jsp</result>
+			<result name="error" type="dispatcher">/focaWeb/registro/registro.jsp</result>
+		</action>
+</package>
+</struts>
