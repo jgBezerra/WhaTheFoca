@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>WhatheFoca</title>
+<title>WhaTheFoca</title>
 <link rel="shortcut icon" type="image/png" href="images/foca-fav.png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,8 +21,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 	<div class="container_wrap">
 		<div class="header_top">
-		    <div class="col-sm-3 logo"><a href="index.html"><img src="images/logo.png" alt=""/></a></div>
-		    <div class="col-sm-6 nav">
+		    <div class="col-sm-3 logo"><a href="index.html"><img src="images/logo2.png" alt=""/></a></div>
+		    <!-- <div class="col-sm-6 nav">
 			  <ul>
 				 <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="comic"><a href="movie.html"> </a></span></li>
 				 <li><span class="simptip-position-bottom simptip-movable" data-tooltip="movie"><a href="movie.html"> </a> </span></li>
@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <li><span class="simptip-position-bottom simptip-movable" data-tooltip="tv"><a href="movie.html"> </a></span></li>
 				 <li><span class="simptip-position-bottom simptip-movable" data-tooltip="more"><a href="movie.html"> </a></span></li>
 			 </ul>
-			</div>
+			</div> -->
 			<!-- <div class="col-sm-3 header_right">
 			   <ul class="header_right_box">
 				 <li><img src="images/p1.png" alt=""/></li>
@@ -46,11 +46,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       	     <div class="register">
 			   <div class="col-md-6 login-left">
 			  	 <h3>Novo por aqui?</h3>
-				 <p>Ao criar uma conta você poderá ficar por da zoeira infinita jamais vista. </p>
+				 <p>A rede de sugestões mais WhaTheFuck da internet. </p>
 				 <a class="acount-btn" href="registro.jsp">Cadastre-se</a>
 			   </div>
 			   <div class="col-md-6 login-right">
-			  	<h3>Registered Customers</h3>
+			  	<h3>Log in</h3>
 				<p>Se ja possui uma conta, preencha os campos.</p>
 				<form>
 				  <div>
@@ -61,8 +61,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span>Senha<label>*</label></span>
 					<input type="text"> 
 				  </div>
-				  <a class="forgot" href="#">Esqueceu a senha?</a>
 				  <input type="submit" value="Login">
+				  <a class="forgot" href="#">Esqueceu a senha?</a>
 			    </form>
 			   </div>	
 			   <div class="clearfix"> </div>
@@ -81,39 +81,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="gp-container">
             <div class="footer-widget footer-1">
             	<div class="wpb_wrapper">
-					<img src="images/f_logo.png" alt=""/>
-				</div> 
-	          <br>
-	          <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
-			  <p class="text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+<!-- 					<img src="images/foca-2.png" alt=""/>
+ -->				</div> 
 			 </div>
-			 <div class="footer_box">
+			  <div class="footer_box">
 			  <div class="col_1_of_3 span_1_of_3">
-					<h3>Categories</h3>
+					<h3>Categorias</h3>
 					<ul class="first">
-						<li><a href="#">Dance</a></li>
-						<li><a href="#">History</a></li>
-						<li><a href="#">Specials</a></li>
+						<li><a href="#">Tirinhas</a></li>
+						<li><a href="#">Gifs</a></li>
+						<li><a href="#">Vídeos</a></li>
 					</ul>
 		     </div>
 		     <div class="col_1_of_3 span_1_of_3">
-					<h3>Information</h3>
+					<h3>Rank</h3>
 					<ul class="first">
-						<li><a href="#">New products</a></li>
-						<li><a href="#">top sellers</a></li>
-						<li><a href="#">Specials</a></li>
+						<li><a href="#">Top Semanal</a></li>
+						<li><a href="#">Top Usuários</a></li>
+						<li><a href="#">Top Smilled</a></li>
 					</ul>
 		     </div>
 		     <div class="col_1_of_3 span_1_of_3">
-					<h3>Follow Us</h3>
+					<h3>Siga-nos</h3>
 					<ul class="first">
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">Twitter</a></li>
 						<li><a href="#">Youtube</a></li>
 					</ul>
 					<div class="copy">
-				      <p>&copy; 2015 Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
-			        </div>
+<!-- 				      <p>&copy; 2015 Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
+ -->			        </div>
 		     </div>
 		    <div class="clearfix"> </div>
 	        </div>
