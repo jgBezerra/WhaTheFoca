@@ -19,6 +19,10 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+
+
+
+
 .container_wrap{
 	padding:5em 0;
 }
@@ -539,7 +543,7 @@ span.m_1 img{
 i.icon1, i.icon2, i.icon3{
 	width: 20px;
 height: 20px;
-background: url(../images/img_sprite.png) -7px -42px;
+/* background: url(../images/risada.png) ; */
 float: left;
 margin-right: 8%;
 }
@@ -555,10 +559,10 @@ ul.list_2 li p, ul.list_4 li p{
 	float: left;
 }
 i.icon2{
-	background: url(../images/img_sprite.png) -33px -42px;
+	background: url(../images/hate.png) ;
 }
 i.icon3{
-	background: url(../images/img_sprite.png) -60px -42px;
+	background: url(../images/share.png) ;
 }
 .content{
 	background:#edeff0;
@@ -575,6 +579,17 @@ margin-bottom: 2em;
 float:right;
 }
 .search form input[type="text"] {
+padding: 3px 0;
+font-weight:500;
+font-size: 1em;
+color:#A6A8AB;
+border:none;
+outline: none;
+width: 76%;
+background: none;
+font-style: italic;
+}
+.search form input[type="password"] {
 padding: 3px 0;
 font-weight:500;
 font-size: 1em;
@@ -1247,7 +1262,19 @@ background:#fff;
 float: left;
 outline: none;
 }
-.text input[type="text"], .text textarea {
+.to input[type="password"] {
+padding: 10px;
+width:30%;
+font-size:1.1em;
+
+margin: 10px 0;
+border: none;
+color: #999;
+background:#fff;
+float: left;
+outline: none;
+}
+.text input[type="text"],input[type="password"] .text textarea {
 width: 70%;
 font-size: 1.1em;
 margin: 10px 0;
@@ -1332,6 +1359,14 @@ text-transform: uppercase;
 	padding:10px;
 	-webkit-appearance: none;
 }
+.login-right input[type="password"] {
+	border: 1px solid #E4E4E4;
+	outline-color:#FFA500;
+	width: 96%;
+	font-size:0.8125em;
+	padding:10px;
+	-webkit-appearance: none;
+}
 .login-right input[type="submit"] {
 	background: #FFA500;
 	color: #FFF;
@@ -1385,7 +1420,32 @@ p.cart {
 	
 	font-size:1em;
 }
-.register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
+
+.register-top-grid select, .register-bottom-grid select {
+	color:#999;
+	
+	display: block;
+	
+	font-size:1em;
+}
+
+.register-top-grid option, .register-bottom-grid option {
+	color:#999;
+	
+	display: block;
+	
+	font-size:1em;
+}
+.register-top-grid input[type="text"],input[type='password'], .register-bottom-grid input[type="text"] {
+	border: 1px solid #EEE;
+	outline-color:#FF5B36;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+	-webkit-appearance: none;
+}
+
+.register-top-grid select, .register-bottom-grid select {
 	border: 1px solid #EEE;
 	outline-color:#FF5B36;
 	width: 96%;
@@ -1673,7 +1733,10 @@ h1.recent {
 .to input[type="text"] {
 	width: 45%;
 }
-.text input[type="text"], .text textarea {
+.to input[type="password"] {
+	width: 45%;
+}
+.text input[type="text"],input[type="password"], .text textarea {
 	width: 100%;
 }
 .form-submit1 input[type="submit"] {
@@ -1755,6 +1818,9 @@ h1.m_little {
 	margin: 2em 0 0;
 }
 .to input[type="text"] {
+	width: 48%;
+}
+.to input[type="password"] {
 	width: 48%;
 }
 }

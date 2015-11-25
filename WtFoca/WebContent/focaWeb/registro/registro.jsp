@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-sm-3 header_right">
 			   <ul class="header_right_box">
 				 <li><img src="images/p1.png" alt=""/></li>
-				 <li><p><a href="login.html">Carol Varois</a></p></li>
+				 <li><p><a href="login.html">Joao Gabriel</a></p></li>
 				 <li class="last"><i class="edit"> </i></li>
 				 <div class="clearfix"> </div>
 			   </ul>

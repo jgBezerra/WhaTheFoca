@@ -5,24 +5,75 @@
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-     <welcome-file>/focaWeb/login.jsp</welcome-file>
+    <welcome-file>/focaWeb/login.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-    <filter>
-      <filter-name>struts2</filter-name>
-      <filter-class>
+  <servlet>
+    <servlet-name>imgServlet</servlet-name>
+    <servlet-class>com.core.web.server.ImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>imgServlet</servlet-name>
+    <url-pattern>/imgServletpath</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>like</servlet-name>
+    <servlet-class>com.core.web.server.Curtidas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>like</servlet-name>
+    <url-pattern>/like</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>xmlServlet</servlet-name>
+    <servlet-class>com.core.web.server.XmlServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>xmlServlet</servlet-name>
+    <url-pattern>/xmlServletpath</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>registro</servlet-name>
+    <servlet-class>com.core.web.server.Registro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>registro</servlet-name>
+    <url-pattern>/registropath</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>postagem</servlet-name>
+    <servlet-class>com.core.web.server.PostagemServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>postagem</servlet-name>
+    <url-pattern>/postagempath</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>upPostagem</servlet-name>
+    <servlet-class>com.core.web.server.UpLoadPostagem</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>upPostagem</servlet-name>
+    <url-pattern>/upLoadPostagempath</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>generate</servlet-name>
+    <servlet-class>com.core.web.server.Gerador</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>generate</servlet-name>
+    <url-pattern>/generate</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>
         org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
       </filter-class>
-   </filter>
-
-   <filter-mapping>
-      <filter-name>struts2</filter-name>
-      <url-pattern>/*</url-pattern>
-   </filter-mapping>
-  
-
-  
+  </filter>
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

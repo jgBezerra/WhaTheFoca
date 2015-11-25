@@ -103,7 +103,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       
       <div class="content">
       	<div class="box_1">
-      	 <h1 class="m_2">Feed</h1>
+      	 <h1 class="m_2">Top Semanal</h1>
+      	 <img src="images/tropheu.png" alt=""/>
       	 <div class="search">
 		    <form>
 				<input type="text" value="Search..." onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
@@ -127,7 +128,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 String curtidas=null;
                                 Conexao dbconn =new Conexao();
                                 Connection myconnection= Conexao.getConnection();
-                                String sqlString = "SELECT * FROM postagem ";
+                                String sqlString = "SELECT * FROM postagem order by curtidas desc";
                                 Statement myStatement = myconnection.createStatement();
                                 ResultSet rs=myStatement.executeQuery(sqlString);
                                 
@@ -161,22 +162,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													    <p align="center"><%out.print(rs.getString("sub_titulo")); %></p>
 													   </div>
 													 <div class="panel-footer" align="center">
-													  <form action="like" method="post"> 
-													   <input type="hidden" name="id" id="id" value="<%=rs.getString("id")%>">
-													   <input type="hidden" name="curtidas" id="curtidas" value="<%=rs.getString("curtidas")%>">
-													   <input type="hidden" name="descurtidas" id="descurtidas" value="<%=rs.getString("descurtidas")%>">
-													     <ul class="list_1.1 list_2"> 
-													     	    <%-- <li><button type="submit" name="curtidas" id="curtidas" value="<%=rs.getString("curtidas")%>"><img src="images/risada.png" alt="SomeAlternateText"></button></li><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
-  												    			<li><i class="icon1"><input type="image" src="images/like.png" alt="Submit" ></i><p><%out.print(rs.getString("curtidas")); %></p></li>
-  												    			<li><i class="icon1"><input type="image" src="images/deslike.png" alt="Submit" ></i><p><%out.print(rs.getString("descurtidas")); %></p></li>
-  												    			<li><i class="icon1"><input type="image" src="images/share.png" alt="Submit" ></i><p><%out.print(rs.getString("curtidas")); %></p></li>
-																<%-- <li><i  onclick="javascript:exportToForm()" class="icon1"> </i><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
-																<%-- <li><input type="image"  value="<%=rs.getString("curtidas")%>" src="images/risada.png" alt="curtidas" /></li><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
- 												    			<%-- <li><i class="icon2"> </i><p><%out.print(rs.getString("curtidas")); %></p></li>
-												    			<li><i class="icon3"> </i><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
-												    	 </ul> 
-												    	</form>
+													     <ul class="list_1.1 list_2">
+													     		<%-- <li><img onclick="javascript:exportToForm()" src="images/risada.png"/><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
+ 												    			<li><i  onclick="javascript:exportToForm()" class="icon1"> </i><p><%out.print(rs.getString("curtidas")); %></p></li>
+												    			<li><i class="icon2"> </i><p><%out.print(rs.getString("curtidas")); %></p></li>
+												    			<li><i class="icon3"> </i><p><%out.print(rs.getString("curtidas")); %></p></li>
+												    	</ul>
 												    </div>
+												    <script>
+												    			var like;
+																function exportToForm() {
+																	alert("oi");
+																    <%likes= (Integer.parseInt(curtidas))+1; 
+																      curtidas = Integer.toString(likes);
+																    System.out.println(curtidas);%>
+																    
+																     
+																 }
+																</script>
 									           </div>		
 												
 												</div>				
@@ -188,6 +191,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 myconnection.close();
                                 
                                 myconnection= Conexao.getConnection();
+                				
 							    String sql = "insert into usuario (curtidas) values (?)";
 							    myStatement = myconnection.createStatement();
 							    PreparedStatement preparador = myconnection.prepareStatement(sql);

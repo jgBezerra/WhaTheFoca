@@ -3,10 +3,7 @@
     <%@page import="java.util.logging.Logger"%>
 <%@page import="java.util.logging.Level"%>
 <%@page import="com.core.web.dao.Conexao"%>
-<%@page import="java.awt.image.BufferedImage"%>
-<%@page import=" javax.imageio.ImageIO"%>
 <%@ page import="java.sql.*"%>
-<%@page trimDirectiveWhitespaces="true"%>
 <%@ page import="java.io.*"%>
     
 <!DOCTYPE HTML>
@@ -64,9 +61,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 	      </div>
 	      <div class="slider">
-	  <!--  <div class="callbacks_container">
+	   <div class="callbacks_container">
 	      <ul class="rslides" id="slider">
-	        <li><img src="images/banner2.jpg" class="img-responsive" alt=""/>
+	        <!-- <li><img src="images/banner2.jpg" class="img-responsive" alt=""/>
 	        	<div class="button">
 			      <a href="#" class="hvr-shutter-out-horizontal">Clique para concorrer</a>
 			    </div>
@@ -75,11 +72,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        	<div class="button">
 			      <a href="#" class="hvr-shutter-out-horizontal">Mais Informações</a>
 			    </div>
-			</li>
+			</li> -->
 	        <li><img src="images/bigLogo.jpg" class="img-responsive" alt=""/>
-	        	<div class="button">
+	        	<!-- <div class="button">
 			      <a href="#" class="hvr-shutter-out-horizontal">Assista Agora</a>
-			    </div>
+			    </div> -->
 			</li>
 	      </ul>
 	    </div>
@@ -98,12 +95,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    			<li><i class="icon3"> </i><p>0</p></li>
 			    		</ul>
 			    	</div>
-			    </div> -->
+			    </div>
       </div>
       
       <div class="content">
       	<div class="box_1">
-      	 <h1 class="m_2">Feed</h1>
+      	 <h1 class="m_2">Top Semanal</h1>
+      	 <img src="images/tropheu.png" alt=""/>
       	 <div class="search">
 		    <form>
 				<input type="text" value="Search..." onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
@@ -113,93 +111,92 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"> </div>
 		</div>
 		<div class="box_2">
-		
-				
+		 <%
+				 String id=(request.getParameter("id"));
 		         
-		         <%Blob file = null;
+		         Blob file = null;
 		         byte[ ] fileData = null ;
-		           String id=(request.getParameter("id")); 
                         try
                         {
                                 /* Db_Connection dbconn=new Db_Connection();
                                 Connection myconnection= dbconn.Connection(); */
-                                int likes;
-                                String curtidas=null;
+                                
                                 Conexao dbconn =new Conexao();
                                 Connection myconnection= Conexao.getConnection();
-                                String sqlString = "SELECT * FROM postagem ";
+
+                                String sqlString = "SELECT * FROM postagem WHERE tipo ='tirinhas'";
                                 Statement myStatement = myconnection.createStatement();
                                 ResultSet rs=myStatement.executeQuery(sqlString);
                                 
-                                
                                 if(!rs.isBeforeFirst())
                                 {
-                                    %><tr>
+                                    %>
+                                    
+                                        <tr>
                                         <td colspan="3"><center><%out.print("No Files!"); %></center></td>
-                                        </tr><%
+                                        </tr>
+                                    <%
                                 }    
                                 
                                 while(rs.next())
-                                {    file = rs.getBlob("conteudo");
-                               	    fileData = file.getBytes(1,(int)file.length()); 
-                               	    curtidas = rs.getString("curtidas");
-                           
-				                								
-								
-                                    %><div class="container">
+                                {   /* file = rs.getBlob("conteudo");
+                               	    fileData = file.getBytes(1,(int)file.length()); */
+                            %>
+									  <div class="container">
+                            	
 												 <div class="row">
-									      		<div class="col-md-6 col-md-offset-2 bootcards-list" >
+      											<div class="col-md-7 col-md-offset-1 bootcards-list" >
 												<div class="panel panel-default">
-													  <div class="panel-heading clearfix "><a href="${pageContext.request.contextPath}/generate?id=<%=rs.getString("id")%>&tipoPostagem=<%=rs.getString("tipo")%>">
-													        	 <h1 class="m_3 text-center"><%out.print(rs.getString("titulo")); %></h1></a>
+													  <div class="panel-heading clearfix "><a><a href="${pageContext.request.contextPath}/generate?id=<%=rs.getString("id")%>&tipoPostagem=<%=rs.getString("tipo")%>">
+													        	 <h1 class="m_3 text-center"><%out.print(rs.getString("titulo"));%></h1></a>
 													  </div>
 													  <div class="panel-body">
- 													    <img src="${pageContext.request.contextPath}/imgServletpath?id=<%=rs.getString("id")%>" class="img-responsive center-block " alt="" />
+													    <img src="${pageContext.request.contextPath}/imgServletpath?id=<%=rs.getString("id")%>" class="img-responsive center-block " alt="" />
 <!-- 													    <img src="images/Basquete.gif" class="img-responsive center-block " alt=""/>
  -->													  </div>
 													  <div class="panel-footer">
-													    <p align="center"><%out.print(rs.getString("sub_titulo")); %></p>
+													    <p align="center"><%out.print(rs.getString("sub_titulo"));%></p>
 													   </div>
-													 <div class="panel-footer" align="center">
-													  <form action="like" method="post"> 
-													   <input type="hidden" name="id" id="id" value="<%=rs.getString("id")%>">
-													   <input type="hidden" name="curtidas" id="curtidas" value="<%=rs.getString("curtidas")%>">
-													   <input type="hidden" name="descurtidas" id="descurtidas" value="<%=rs.getString("descurtidas")%>">
-													     <ul class="list_1.1 list_2"> 
-													     	    <%-- <li><button type="submit" name="curtidas" id="curtidas" value="<%=rs.getString("curtidas")%>"><img src="images/risada.png" alt="SomeAlternateText"></button></li><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
-  												    			<li><i class="icon1"><input type="image" src="images/like.png" alt="Submit" ></i><p><%out.print(rs.getString("curtidas")); %></p></li>
-  												    			<li><i class="icon1"><input type="image" src="images/deslike.png" alt="Submit" ></i><p><%out.print(rs.getString("descurtidas")); %></p></li>
-  												    			<li><i class="icon1"><input type="image" src="images/share.png" alt="Submit" ></i><p><%out.print(rs.getString("curtidas")); %></p></li>
-																<%-- <li><i  onclick="javascript:exportToForm()" class="icon1"> </i><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
-																<%-- <li><input type="image"  value="<%=rs.getString("curtidas")%>" src="images/risada.png" alt="curtidas" /></li><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
- 												    			<%-- <li><i class="icon2"> </i><p><%out.print(rs.getString("curtidas")); %></p></li>
-												    			<li><i class="icon3"> </i><p><%out.print(rs.getString("curtidas")); %></p></li> --%>
-												    	 </ul> 
-												    	</form>
+													 <div class="panel-footer">
+													     <ul class="list_1.1 list_2">
+												    			<li><i class="icon1"> </i><p>2,548</p></li>
+												    			<li><i class="icon2"> </i><p>215</p></li>
+												    			<li><i class="icon3"> </i><p>546</p></li>
+												    		</ul>
 												    </div>
+												    <div class="fb-comments" data-href="http://localhost:8080/WtFoca/first.jsp" data-width="600" data-numposts="3"></div>				 
+											            <div id="fb-root"></div>
+														<script>(function(d, s, id) {
+														  var js, fjs = d.getElementsByTagName(s)[0];
+														  if (d.getElementById(id)) return;
+														  js = d.createElement(s); js.id = id;
+														  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4";
+														  fjs.parentNode.insertBefore(js, fjs);
+														}(document, 'script', 'facebook-jssdk'));
+														</script>
 									           </div>		
 												
-												</div>				
-									 </div> 
-									 </div><%
+												</div>	
+												</div>
+												</div>
+                                   <%--  <tr>
+                                        <td><center><%out.print(rs.getString("id")); %></center></td>
+                                        <td><center><%out.print(rs.getString("titulo")); %></center></td>
+                                        <td><center><%out.print(rs.getBytes("titulo")); %></center></td>
+                                       
+                                        <td><center><a href="view_file.jsp?id=<%out.print(rs.getString("id"));%>">View</a></center></td>
+                                    </tr> --%>
+                            <%
                                 }
+                            %>
+                         
+                            <%
                                 rs.close();
                                 myStatement.close();
                                 myconnection.close();
-                                
-                                myconnection= Conexao.getConnection();
-							    String sql = "insert into usuario (curtidas) values (?)";
-							    myStatement = myconnection.createStatement();
-							    PreparedStatement preparador = myconnection.prepareStatement(sql);
-								preparador.setString(1,curtidas);
-								preparador.execute();
-								preparador.close();
-							    
+                        }catch(Exception e){e.printStackTrace();}    
                         
-                                
-                            
-                        }catch(Exception e){e.printStackTrace(); System.out.println("erro no MAIN1.JSP");
-                        }%>
+                    %>
 	
 			
 			
@@ -219,16 +216,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     </div> 
 		 -->
-			
-			
-		
-    
-    
-  </div>
-      </div>
-   </div>
-   </div>
- </div>
+				
+ 			</div>
+		</div>
+	</div>
+</div>	
  
 <div class="container"> 
  <footer id="footer">
